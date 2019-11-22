@@ -35,4 +35,4 @@ This application is Licensed under MIT
 
 Copyright (c) 2016 Bryon Burke
 
-issues to sort
+SPECIFICATIONS
