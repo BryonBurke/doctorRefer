@@ -13,7 +13,7 @@ $(document).ready(function(){
   $('#getDoctor').click(() => {
     apiFetch.getDoctor().then((auth) => {
       $('.doctorOutput').text(auth);
-      console.log(auth);
+
     });
   });
 
