@@ -11,8 +11,8 @@ import { ApiFetch } from './js/apiFetch.js';
 // USER INTERFACE
 $(document).ready(function(){
   $('#getDoctor').click(() => {
-    apiFetch.getDoctor().then((auth) => {
-      $('.doctorOutput').text(auth);
+    apiFetch.getDoctor().then((docter) => {
+      $('.doctorOutput').text(docter);
 
     });
   });
