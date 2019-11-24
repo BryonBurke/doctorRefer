@@ -1,20 +1,22 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta charset="utf-8">
-  <title>Doctor Lookup</title>
-</head>
-<body>
-  <div class="container">
-    <button id="getDoctor" type="button" name="button">Get Doctor</button>
-    <div class="doctorOutput"></div>
-    <div class="result">
-      <p id="lyrics"></p>
+  <head>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="weather-interface.js"></script>
+    <title>Doctor Recommender</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Doctor Recommender</h1>
+      <label for="ailment">Enter your ailment:</label>
+      <input id="ailment" type="text">
+      <button class="btn-success" id="userAilment">Get doctor recommendation</button>
+      <div class="errors"></div>
+      <div class="firstName"></div>
+      <div class="lastName"></div>
+      <div class="street"></div>
+      <div class="street2"></div>
+      <div class="webLink"></div>
+      <div class="acceptingPatients"></div>
     </div>
-  </div>
-
-
-
-</body>
+  </body>
 </html>
