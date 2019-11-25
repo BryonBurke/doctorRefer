@@ -12,14 +12,20 @@ $(document).ready(function() {
         getElements(jsonifiedResponse);
       });
 
-      const getElements = function(response) {
-        $('#firstName').text(`First Name ${response.data[0].profile.first_name}`);
-        $('#lastName').text(`Last Name ${response.data[0].profile.last_name}`);
-        $('#street').text(`Address line 1 ${response.data[0].practices[0].visit_address.street}`);
-        $('#street2').text(`Address line 2 ${response.data[0].practices[0].visit_address.street2}`);
-        $('#webLink').text(`Website ${response.data[0].practices[0].website}`);
-        $('#acceptingPatients').text(`Accepting patients? ${response.data[0].practices[0].accepts_new_patients}`);
+
+      for (var i = 0; i < 5; i++) {
+
+        var getElements = function(response) {
+          $('#firstName').text(`First Name ${response.data[i].profile.first_name}`);
+          $('#lastName').text(`Last Name ${response.data[i].profile.last_name}`);
+          $('#street').text(`Address line 1 ${response.data[i].practices[0].visit_address.street}`);
+          $('#street2').text(`Address line 2 ${response.data[i].practices[0].visit_address.street2}`);
+          $('#webLink').text(`Website ${response.data[i].practices[0].website}`);
+          $('#acceptingPatients').text(`Accepting patients? ${response.data[i].practices[0].accepts_new_patients}`);
+        }
+
       }
+
 
     });
   });
