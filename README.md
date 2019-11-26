@@ -11,6 +11,8 @@ This application takes user input symptoms and uses an api to retrieve a list of
 ## Setup/Installation Requirements
 
 * Drag app folder into atom or editor of choice
+* Create a file in root called .env
+* In the .env file type: API_KEY = ,followed by your Api key number.
 * In the terminal type: npm install
 * In the terminal type: npm start
 * A local server will be spun up which can accept user input
@@ -36,3 +38,7 @@ This application is Licensed under MIT
 Copyright (c) 2016 Bryon Burke
 
 SPECIFICATIONS
+
+1. The program will accept user input for ailment.
+2. The program will make an api call with the input and return a list of doctors in the area who can help them with their ailment.
+3. The list of doctors are displayed on the index page.
