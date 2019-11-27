@@ -1,7 +1,6 @@
 import { ApiService } from './../src/api-service.js';
 
 $(document).ready(function() {
-
   $('#userAilment').click(function() {
     const  ailment = $('#ailment').val();
     $('#ailment').val("");
@@ -11,16 +10,14 @@ $(document).ready(function() {
       getElements(response);
     })();
     function getElements(response) {
-
       for (var i = 0; i < 10; i++) {
-
         $('.firstName').text(`First Name ${response.data[i].profile.first_name}`);
+        console.log(`First Name ${response.data[i].profile.first_name}`);
         $('.lastName').text(`Last Name ${response.data[i].profile.last_name}`);
         $('.street').text(`Address line 1 ${response.data[i].practices[0].visit_address.street}`);
         $('.street2').text(`Address line 2 ${response.data[i].practices[0].visit_address.street2}`);
         $('.webLink').text(`Website ${response.data[i].practices[0].website}`);
         $('.acceptingPatients').text(`Accepting patients? ${response.data[i].practices[0].accepts_new_patients}`);
-
       }
     }
   });
