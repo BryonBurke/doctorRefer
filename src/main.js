@@ -11,13 +11,12 @@ $(document).ready(function() {
     })();
     function getElements(response) {
       for (var i = 0; i < 10; i++) {
-        $('.firstName').text(`First Name ${response.data[i].profile.first_name}`);
-        console.log(`First Name ${response.data[i].profile.first_name}`);
-        $('.lastName').text(`Last Name ${response.data[i].profile.last_name}`);
-        $('.street').text(`Address line 1 ${response.data[i].practices[0].visit_address.street}`);
-        $('.street2').text(`Address line 2 ${response.data[i].practices[0].visit_address.street2}`);
-        $('.webLink').text(`Website ${response.data[i].practices[0].website}`);
-        $('.acceptingPatients').text(`Accepting patients? ${response.data[i].practices[0].accepts_new_patients}`);
+        document.write(`First Name ${response.data[i].profile.first_name}`+ "<br>");
+        document.write(`Last Name ${response.data[i].profile.last_name}`+ "<br>");
+        document.write(`Address line 1 ${response.data[i].practices[0].visit_address.street}` + "<br>");
+        document.write(`Address line 2 ${response.data[i].practices[0].visit_address.street2}`+ "<br>");
+        document.write(`Website ${response.data[i].practices[0].website}`+ "<br>");
+        document.write(`Accepting patients? ${response.data[i].practices[0].accepts_new_patients}`+ "<br>" + "<br>" + "<br>");
       }
     }
   });
