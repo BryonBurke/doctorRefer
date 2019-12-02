@@ -10,7 +10,15 @@ $(document).ready(function() {
       getElements(response);
     })();
     function getElements(response) {
-      for (var i = 0; i < 10; i++) {
+
+      if (response.data.length == '0') {
+
+        document.write('Sorry, no Doctors match your search');
+      }else {
+
+
+
+      for (var i = 0; i < (response.data.length); i++) {
         document.write(`First Name: ${response.data[i].profile.first_name}`+ "<br>");
         document.write(`Last Name: ${response.data[i].profile.last_name}`+ "<br>");
         document.write(`Address line 1: ${response.data[i].practices[0].visit_address.street}` + "<br>");
@@ -37,12 +45,13 @@ $(document).ready(function() {
         }
       }
     }
+
+
+    }
   });
 });
 
-if (true) {
 
-}
 
 
 

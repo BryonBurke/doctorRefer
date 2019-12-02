@@ -5,7 +5,7 @@ async getDoctor(ailment) {
       let jsonifiedResponse = await response.json();
       return jsonifiedResponse;
     } catch(error) {
-      console.error("There was an error handling your request: " + error.message);
+      document.write("There was an error handling your request: " + error.message);
     }
   }
 }
