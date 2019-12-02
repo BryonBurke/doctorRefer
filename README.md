@@ -21,7 +21,7 @@ This application takes user input symptoms and uses an api to retrieve a list of
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+There are no known bugs
 
 ## Support and contact details
 
