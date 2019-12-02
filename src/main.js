@@ -10,41 +10,36 @@ $(document).ready(function() {
       getElements(response);
     })();
     function getElements(response) {
-
       if (response.data.length == '0') {
-
         document.write('Sorry, no Doctors match your search');
       }else {
-
-
-
-      for (var i = 0; i < (response.data.length); i++) {
-        document.write(`First Name: ${response.data[i].profile.first_name}`+ "<br>");
-        document.write(`Last Name: ${response.data[i].profile.last_name}`+ "<br>");
-        document.write(`Address line 1: ${response.data[i].practices[0].visit_address.street}` + "<br>");
-        if ((`${response.data[i].practices[0].visit_address.street2}`) === "undefined") {
-          document.write('Address line2: none listed' + "<br>");
-        }
-        else {
-          document.write(`Address line 2: ${response.data[i].practices[0].visit_address.street2}`+ "<br>");
-        }
-        if ((`${response.data[i].practices[0].website}`) === "undefined") {
-          document.write('Website: no website listed' + "<br>");
-        }
-        else {
-          document.write(`Website: ${response.data[i].practices[0].website}`+ "<br>");
-        }
-        if ((`${response.data[i].practices[0].accepts_new_patients}`) === "true") {
-          document.write('Accepting patients?: Yes' + "<br>" + "<br>" + "<br>");
-        }
-        else if ((`${response.data[i].practices[0].accepts_new_patients}`) === "false") {
-          document.write('Accepting patients?: No' + "<br>" + "<br>" + "<br>");
-        }
-        else {
-          document.write('Accepting patients?:  Unknown' + "<br>" + "<br>" + "<br>");
+        for (var i = 0; i < (response.data.length); i++) {
+          document.write(`First Name: ${response.data[i].profile.first_name}`+ "<br>");
+          document.write(`Last Name: ${response.data[i].profile.last_name}`+ "<br>");
+          document.write(`Address line 1: ${response.data[i].practices[0].visit_address.street}` + "<br>");
+          if ((`${response.data[i].practices[0].visit_address.street2}`) === "undefined") {
+            document.write('Address line2: none listed' + "<br>");
+          }
+          else {
+            document.write(`Address line 2: ${response.data[i].practices[0].visit_address.street2}`+ "<br>");
+          }
+          if ((`${response.data[i].practices[0].website}`) === "undefined") {
+            document.write('Website: no website listed' + "<br>");
+          }
+          else {
+            document.write(`Website: ${response.data[i].practices[0].website}`+ "<br>");
+          }
+          if ((`${response.data[i].practices[0].accepts_new_patients}`) === "true") {
+            document.write('Accepting patients?: Yes' + "<br>" + "<br>" + "<br>");
+          }
+          else if ((`${response.data[i].practices[0].accepts_new_patients}`) === "false") {
+            document.write('Accepting patients?: No' + "<br>" + "<br>" + "<br>");
+          }
+          else {
+            document.write('Accepting patients?:  Unknown' + "<br>" + "<br>" + "<br>");
+          }
         }
       }
-    }
 
 
     }
