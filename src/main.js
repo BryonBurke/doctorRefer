@@ -15,7 +15,7 @@ $(document).ready(function() {
     function getElements(response) {
 
       if (response.data.length === '0') {
-        document.write('Sorry, no Doctors match your search');
+        $("ul").append('Sorry, no Doctors match your search');
       }else {
         for (var i = 0; i < (response.data.length); i++) {
           let firstName =            response.data[i].profile.first_name;
