@@ -34,5 +34,13 @@
     "webpack": "4.39.3",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryonBurke/doctorRefer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BryonBurke/doctorRefer/issues"
+  },
+  "homepage": "https://github.com/BryonBurke/doctorRefer#readme"
 }

@@ -12,9 +12,9 @@ This application takes user input symptoms and uses an api to retrieve a list of
 
 * Drag app folder into atom or editor of choice
 * Create a file in root called .env
-* In the .env file type: API_KEY = ,followed by your Api key number.
+* In the .env file type: API_KEY={your-api-key-number}
 * In the terminal type: npm install
-* In the terminal type: npm start
+* In the terminal type: npm run start
 * A local server will be spun up which can accept user input
 
 

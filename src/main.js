@@ -1,4 +1,6 @@
 import { ApiService } from './../src/api-service.js';
+import $ from 'jquery';
+
 
 $(document).ready(function() {
   $('#userAilment').click(function() {
@@ -9,42 +11,70 @@ $(document).ready(function() {
       const response = await apiService.getDoctor(ailment);
       getElements(response);
     })();
+
     function getElements(response) {
-      if (response.data.length == '0') {
+
+      if (response.data.length === '0') {
         document.write('Sorry, no Doctors match your search');
       }else {
         for (var i = 0; i < (response.data.length); i++) {
-          document.write(`First Name: ${response.data[i].profile.first_name}`+ "<br>");
-          document.write(`Last Name: ${response.data[i].profile.last_name}`+ "<br>");
-          document.write(`Address line 1: ${response.data[i].practices[0].visit_address.street}` + "<br>");
-          if ((`${response.data[i].practices[0].visit_address.street2}`) === "undefined") {
-            document.write('Address line2: none listed' + "<br>");
+          let firstName =            response.data[i].profile.first_name;
+          let lastName =             response.data[i].profile.last_name;
+          let addressLine1 =         response.data[i].practices[0].visit_address.street;
+          let addressLine2 =         response.data[i].practices[0].visit_address.street2;
+          let webSite =              response.data[i].practices[0].website;
+          let acceptingNewPatients = response.data[i].practices[0].accepts_new_patients;
+          $("ul").append(`First Name: ${firstName}`);
+          $("ul").append(`Last Name: ${lastName}`);
+          $("ul").append(`Address line 1: ${addressLine1}`);
+          if (addressLine2 === "undefined") {
+            $("ul").append("Address line2: none listed");
           }
           else {
-            document.write(`Address line 2: ${response.data[i].practices[0].visit_address.street2}`+ "<br>");
+            $("ul").append(`Address line 2: ${addressLine2}`);
           }
-          if ((`${response.data[i].practices[0].website}`) === "undefined") {
-            document.write('Website: no website listed' + "<br>");
-          }
-          else {
-            document.write(`Website: ${response.data[i].practices[0].website}`+ "<br>");
-          }
-          if ((`${response.data[i].practices[0].accepts_new_patients}`) === "true") {
-            document.write('Accepting patients?: Yes' + "<br>" + "<br>" + "<br>");
-          }
-          else if ((`${response.data[i].practices[0].accepts_new_patients}`) === "false") {
-            document.write('Accepting patients?: No' + "<br>" + "<br>" + "<br>");
+          if (website === "undefined") {
+            $("ul").append("Website: no website listed");
           }
           else {
-            document.write('Accepting patients?:  Unknown' + "<br>" + "<br>" + "<br>");
+            $("ul").append(`Website: ${website}`);
+          }
+          if (acceptingNewPatients === "true") {
+            $("ul").append('Accepting patients?: Yes' + "<br>" + "<br>" + "<br>");
+          }
+          else if (acceptingNewPatients === "false") {
+            $("ul").append('Accepting patients?: No' + "<br>" + "<br>" + "<br>");
+          }
+          else {
+            $("ul").append('Accepting patients?:  Unknown' + "<br>" + "<br>" + "<br>");
           }
         }
       }
-
-
     }
+
+    $('#doctorName').click(function() {
+      const  doctor = $('#userDoctorName').val();
+      $('#userDoctorName').val("");
+      (async () => {
+        let apiService = new ApiService();
+        const response = await apiService.getDoctorName(userDoctorName);
+        getDoctorName(response);
+      })();
+
+      function getDoctorName(response) {
+        let firstName = response.data[0].profile.first_name;
+        let lastName =  response.data[0].profile.last_name;
+        if (firstName === "undefined") {
+          $("ul").append('Sorry, that Doctor not found' + "<br>" + "<br>" + "<br>")
+        }else {
+          $("ul").append("Doctor Found");
+          $("ul").append(`First Name: ${firstName}`);
+          $("ul").append(`Last Name: ${lastName}<br><br>`);
+        }
+      }
+
+    });
   });
-});
 
 
 
